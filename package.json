@@ -1,0 +1,38 @@
+{
+  "name": "electron-webpack-typescript-quickstart",
+  "version": "1.0.0",
+  "description": "Example structure and configuration for an Electron project using Webpack and Typescript",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "npm run build-webpack",
+    "build-webpack": "webpack --config webpack/webpack.config.js",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jportela/electron-webpack-typescript-quickstart.git"
+  },
+  "keywords": [
+    "electron",
+    "webpack",
+    "typescript",
+    "boilerplate",
+    "quickstart",
+    "example"
+  ],
+  "author": "João Portela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jportela/electron-webpack-typescript-quickstart/issues"
+  },
+  "homepage": "https://github.com/jportela/electron-webpack-typescript-quickstart#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.3",
+    "electron": "^3.0.4",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
