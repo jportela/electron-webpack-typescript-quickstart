@@ -8,3 +8,7 @@ Example structure and configuration for an Electron project using Webpack and Ty
 `npm run build`
 
 `npm start`
+
+## Watch (dev) mode
+
+`npm run dev`

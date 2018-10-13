@@ -5,9 +5,10 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "npm run build-webpack",
+    "build-watch": "npm run build-webpack -- --watch",
     "build-webpack": "webpack --config webpack/webpack.config.js",
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm:build-watch\" \"npm:start\"",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/jportela/electron-webpack-typescript-quickstart#readme",
   "devDependencies": {
+    "concurrently": "^4.0.1",
     "copy-webpack-plugin": "^4.5.3",
     "electron": "^3.0.4",
     "ts-loader": "^5.2.1",
