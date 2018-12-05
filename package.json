@@ -4,10 +4,11 @@
   "description": "Example structure and configuration for an Electron project using Webpack and Typescript",
   "main": "dist/main.js",
   "scripts": {
-    "build": "npm run build-webpack",
+    "build": "rimraf dist && npm run build-webpack",
     "build-watch": "npm run build-webpack -- --watch",
     "build-webpack": "webpack --config webpack/webpack.config.js",
     "dev": "concurrently \"npm:build-watch\" \"npm:start\"",
+    "pack": "npm run build && rimraf release && electron-builder",
     "start": "electron ."
   },
   "repository": {
@@ -24,6 +25,18 @@
   ],
   "author": "João Portela",
   "license": "MIT",
+  "build": {
+    "appId": "com.jportela.quickstart",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "./dist/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
+  },
   "bugs": {
     "url": "https://github.com/jportela/electron-webpack-typescript-quickstart/issues"
   },
@@ -32,6 +45,8 @@
     "concurrently": "^4.0.1",
     "copy-webpack-plugin": "^4.5.3",
     "electron": "^3.0.4",
+    "electron-builder": "^20.38.2",
+    "rimraf": "^2.6.2",
     "ts-loader": "^5.2.1",
     "typescript": "^3.1.2",
     "webpack": "^4.20.2",
